@@ -1,0 +1,30 @@
+{
+  "name": "coalition-snapback",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Coalition Snapback — self-hosted, multi-store Shopify products/collections/metafields backup & restore with CSV export and scheduling.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coalitiontech/Coalition-Snapback.git"
+  },
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c blue,green \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm --workspace server run dev",
+    "dev:web": "npm --workspace web run dev",
+    "build": "npm --workspace web run build && npm --workspace server run build",
+    "start": "npm --workspace server run start",
+    "typecheck": "npm --workspace server run typecheck && npm --workspace web run typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

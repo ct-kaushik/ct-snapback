@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Runtime data — SQLite DB, auto-generated key files, and local backups. NEVER commit.
+data/
+backups/
+
+# Secrets & environment (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Local working notes (AI session logs). Delete this line if you want them tracked.
+claude-logs/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+coverage/

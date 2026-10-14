@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: coalition-snapback
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/app/data
+      - APP_BASE_URL=${APP_BASE_URL:-http://localhost:8080}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
